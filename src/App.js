@@ -68,7 +68,8 @@ function Home() {
         </div>
 
         <div className="mintContainer">
-          {Number(unclaimedSupply?.data) + Number(claimedSupply?.data) == Number(claimedSupply.data) ?
+          {Number(unclaimedSupply?.data) + Number(claimedSupply?.data)
+           == Number(claimedSupply.data) ?
             <div>
               <h2>Sold Out!!!!</h2>
             </div> :
