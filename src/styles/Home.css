@@ -1,118 +1,192 @@
 .container {
-  padding: 0 2rem;
-}
-
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
+  margin-top: 96px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  width: 100vw;
 }
 
-.title a {
-  color: #f213a4;
-  text-decoration: none;
+.previewImage {
+  height: 500px;
+  width: 500px;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  padding: 8px;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-}
-
-.title,
-.description {
-  text-align: center;
-}
-
-.connect {
-  margin-bottom: 2rem;
-}
-
-.description {
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
-  font-size: 1.5rem;
-}
-
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
-}
-
-.grid {
+.mintInfoContainer {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  max-width: 1200px;
+  width: 100%;
+  padding: 0 24px;
+  min-height: 720px;
+  max-width: 95vw;
+  gap: 2%;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
 }
 
-.card {
-  background-color: #1b2129;
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 350px;
+.infoSide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  height: 100%;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  background-color: #272c34;
-  color: #0ea5e9;
-  border-color: #0ea5e9;
+.description {
+  opacity: 0.7;
+  font-size: 1rem;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+.imageSide {
+  width: 25%;
+  height: 100%;
 }
 
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
+.image {
+  width: 85%;
+  border-radius: 16px;
 }
 
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0;
 }
 
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
+.mainButton {
+  cursor: pointer;
+  display: inline-flex;
+  appearance: none;
+  align-items: center;
+  -webkit-box-align: center;
+  justify-content: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  line-height: 1.2;
+  font-weight: 600;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-duration: 200ms;
+  height: 3rem;
+  min-width: 3rem;
+  font-size: 1rem;
+  background: #e5e5ea;
+  background-image: linear-gradient(
+    to left,
+    var(--color-primary) 0%,
+    var(--color-secondary) 101.52%
+  );
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-radius: 9999px;
+  border-style: none;
+}
+
+.mainButton:hover {
+  opacity: 0.8;
+}
+
+.mintCompletionArea {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mintAreaLeft {
+  margin-left: 5%;
+  opacity: 0.75;
+}
+
+.mintAreaRight {
+  margin-right: 5%;
+  opacity: 0.75;
+}
+
+.spacerTop {
+  margin-top: 16px;
+}
+
+.spacerBottom {
+  margin-bottom: 16px;
+}
+
+.buttonGapTop {
+  cursor: pointer;
+  margin-top: 32px;
+}
+
+.quantityContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+}
+
+.mintContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  margin-top: 24px;
+}
+
+.textInput {
+  width: 48px;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 8px;
+  color: #fff;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+}
+
+.quantityControlButton {
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 2rem;
+  background-color: transparent;
+  border: 1px solid grey;
+  color: #fff;
+}
+
+.quantityControlButton:disabled {
+  opacity: 0.25;
+}
+
+
+/* On mobile, make the .mintInfoContainer stack vertically */
+@media screen and (max-width: 850px) {
+  .mintInfoContainer {
     flex-direction: column;
+    padding-bottom: 5%;
   }
-}
 
-.card,
-.footer {
-  border-color: #222;
-}
-.code {
-  background: #111;
-}
-.logo img {
-  filter: invert(1);
+  .infoSide {
+    width: 100%;
+  }
+
+  .mintButton {
+    max-width: 100% !important;
+  }
+
+  .imageSide {
+    width: 100%;
+  }
 }
